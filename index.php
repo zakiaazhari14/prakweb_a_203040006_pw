@@ -11,13 +11,15 @@ $buku=query('SELECT * FROM buku');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buku</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 
 <body>
 
   <h1>Daftar Buku Novel</h1>
 
-  <table border="1" cellpading="10" cellspacing="0">
+  <table border="1" cellpading="10" cellspacing="1">
     <tr>
       <th>No</th>
       <th>judul_buku</th>
@@ -37,7 +39,7 @@ $buku=query('SELECT * FROM buku');
         <td><?= $row["harga_buku"]; ?></td>
         <td><?= $row["tahun_terbit"]; ?></td>
         <td><?= $row["jumlah_halaman"]; ?></td>
-        <td><img src="<?= $row["gambar_buku"]; ?>" alt="" width="100"></td>
+        <td><img src="img/<?= $row["gambar_buku"]; ?>" alt="" width="100"></td>
       </tr>
     <?php endforeach; ?>
   </table>
