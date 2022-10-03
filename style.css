@@ -1,4 +1,8 @@
 body{
-	background: blue;
+	background: cyan;
 	color: black;
+}
+img {
+    height: 140px;
+    ;
 }

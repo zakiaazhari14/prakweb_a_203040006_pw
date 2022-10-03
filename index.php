@@ -17,29 +17,30 @@ $buku=query('SELECT * FROM buku');
 
 <body>
 
-  <h1>Daftar Buku Novel</h1>
-
-  <table border="1" cellpading="10" cellspacing="1">
+<h1>Daftar Buku Nov</h1>
+  <a href="tambah.php">Tambah Buku</a>
+  <table border="1" cellpading="10" cellspacing="0" >
     <tr>
-      <th>No</th>
-      <th>judul_buku</th>
-      <th>Penulis_buku</th>
-      <th>harga_buku</th>
-      <th>tahun_terbit</th>
-      <th>jumlah_halaman</th>
-      <th>gambar_buku</th>
-      <th>aksi</th>
+      <th>NO</th>
+      <th>Gambar</th>
+      <th>Judul Buku</th>
+      <th>Penulis Buku</th>
+      <th>Harga Buku</th>
+      <th>Aksi</th>
     </tr>
     <?php $i = 1; ?>
     <?php foreach ($buku as $row) : ?>
       <tr>
         <td><?= $i++; ?></td>
-        <td><?= $row["judul_buku"]; ?> </td>
-        <td><?= $row["penulis_buku"]; ?></td>
-        <td><?= $row["harga_buku"]; ?></td>
-        <td><?= $row["tahun_terbit"]; ?></td>
-        <td><?= $row["jumlah_halaman"]; ?></td>
         <td><img src="img/<?= $row["gambar_buku"]; ?>" alt="" width="100"></td>
+        <td><?= $row["judul_buku"]; ?></td>
+        <td><?= $row["penulis_buku"]; ?></td>
+        <td><?= $row["harga_buku"]; ?> </td>
+        <td>
+        <a href="ubah.php?id=<?= $row["id"]; ?>" onclick="return confirm('Ubah Data??')">Ubah</a>
+          <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Hapus Data??')">Hapus</a>
+
+        </td>
       </tr>
     <?php endforeach; ?>
   </table>
